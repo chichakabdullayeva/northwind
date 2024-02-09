@@ -1,6 +1,7 @@
 package com.example.northwind.api.controllers;
 
 import com.example.northwind.business.abstracts.CategoryService;
+import com.example.northwind.core.utilities.result.DataResult;
 import com.example.northwind.entities.Category;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import java.util.List;
 public class CategoryControllers {
     private CategoryService categoryService;
     @GetMapping("/getAll")
-    public List<Category> getAll() {
+    public DataResult<List<Category>> getAll() {
         return this.categoryService.getAll();
 
     }

@@ -18,8 +18,6 @@ public class Category {
     @Column(name = "category_name")
     private String categoryname;
 
-            @Column(name= "category_id")
-            private int catagoryId;
     @Column(name= "quantity_per_unit")
     private String quantityPerUnit;
     @Column(name= "unit_price")

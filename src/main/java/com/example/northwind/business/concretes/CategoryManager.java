@@ -2,6 +2,8 @@ package com.example.northwind.business.concretes;
 
 import com.example.northwind.business.abstracts.CategoryService;
 import com.example.northwind.business.abstracts.CategoryService;
+import com.example.northwind.core.utilities.result.DataResult;
+import com.example.northwind.core.utilities.result.SuccessDataResult;
 import com.example.northwind.dataAccess.CategoryDao;
 import com.example.northwind.dataAccess.CategoryDao;
 import com.example.northwind.entities.Category;
@@ -15,10 +17,10 @@ import java.util.List;
 public class CategoryManager implements CategoryService {
     private CategoryDao categoryDaoDao;
     @Override
-    public List<Category> getAll() {
-        List<Category> categories= categoryDaoDao.findAll();
+    public DataResult<List<Category>> getAll() {
 
-        return categories;
+
+        return new SuccessDataResult<>("Ugurla listelendi", this.categoryDaoDao.findAll());
     }
 }
 
